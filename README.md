@@ -186,13 +186,17 @@ type-checkers), like the `@alchemy.run/*` packages.
 
 ## Releasing
 
-Releases publish from GitHub Actions (`.github/workflows/release.yml`) with
-[npm trusted publishing](https://docs.npmjs.com/trusted-publishers): no npm token is stored, and
-each version carries a provenance attestation linking it to the commit that built it.
+Releases are staged from GitHub Actions (`.github/workflows/release.yml`) with
+[npm trusted publishing](https://docs.npmjs.com/trusted-publishers) and staged publishing: no npm
+token is stored, the workflow can only *stage* a version, and a maintainer approves it with 2FA
+before it goes public.
 
 ```sh
 npm version patch        # or minor / major / prerelease; bumps package.json and tags vX.Y.Z
-git push --follow-tags   # the tag runs check, build, smoke and npm publish
+git push --follow-tags   # the tag runs check, build, smoke and `npm stage publish`
+
+npm stage list alchemy-provider-telnyx   # then, with 2FA:
+npm stage approve <stage-id>
 ```
 
 Pre-release versions (`1.2.0-beta.1`) publish to the `next` dist-tag. The job runs in the

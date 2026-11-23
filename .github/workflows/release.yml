@@ -1,17 +1,24 @@
 name: Release
 
-# Publishes to npm when a version tag is pushed:
+# Stages a release on npm when a version tag is pushed:
 #
 #   npm version patch   # bumps package.json and tags vX.Y.Z
 #   git push --follow-tags
 #
-# Uses npm trusted publishing: npm verifies this workflow's OIDC token instead
-# of a stored token, and attaches a provenance attestation. Configure it on
-# npmjs.com under the package's Settings → Trusted publishing:
+# Uses npm trusted publishing (this workflow's OIDC token, no stored token)
+# with staged publishing: the trust relationship only allows
+# `npm stage publish`, so a run uploads the version in a hidden, staged state.
+# It goes live when a maintainer approves it with 2FA:
+#
+#   npm stage list alchemy-provider-telnyx
+#   npm stage approve <stage-id>
+#
+# Trusted publisher on npmjs.com (package → Settings → Trusted publishing):
 #   Organization or user: menelsystems
 #   Repository:           alchemy-provider-telnyx
 #   Workflow filename:    release.yml
 #   Environment name:     release
+#   Allowed command:      npm stage publish
 
 on:
   push:
@@ -47,9 +54,9 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
 
-      # Trusted publishing needs npm >= 11.5.1.
+      # Staged publishing (`npm stage`) needs a recent npm 11.
       - name: Update npm
-        run: npm install -g npm@^11.5.1
+        run: npm install -g npm@^11.20.0
 
       - name: Tag matches package.json version
         run: |
@@ -74,9 +81,24 @@ jobs:
       # Pre-release versions (1.2.0-beta.1) go to the `next` dist-tag so
       # `npm install alchemy-provider-telnyx` keeps getting the latest stable.
       # The steps above already ran what prepublishOnly would.
-      - name: Publish
+      - name: Stage on npm
         run: |
+          set -o pipefail
           version="$(node -p "require('./package.json').version")"
           tag=latest
           case "$version" in *-*) tag=next ;; esac
-          npm publish --ignore-scripts --access public --tag "$tag"
+          npm stage publish --ignore-scripts --access public --tag "$tag" | tee stage.log
+          {
+            echo "### Staged alchemy-provider-telnyx@$version (dist-tag \`$tag\`)"
+            echo
+            echo "It is not public yet. Approve it with 2FA:"
+            echo
+            echo '```sh'
+            echo "npm stage list alchemy-provider-telnyx"
+            echo "npm stage approve <stage-id>"
+            echo '```'
+            echo
+            echo '```'
+            cat stage.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
