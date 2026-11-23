@@ -1,0 +1,17 @@
+{
+  "description": "PUT /storage/kvs/{id}/keys/{key} takes the value as the raw request body (`application/octet-stream`, stored verbatim; spec: requestBody.content['application/octet-stream'], 'Raw value bytes, stored verbatim.'). The OpenAPI converter reads only JSON, form and multipart request bodies, so the generated PutKvKeyRequest has no way to send the value. Add it as the httpPayload member `value`.",
+  "patches": [
+    {
+      "op": "add",
+      "path": "/shapes/com.telnyx.kv_keys#PutKvKeyRequest/members/value",
+      "value": {
+        "target": "smithy.api#Blob",
+        "traits": {
+          "smithy.api#httpPayload": {},
+          "smithy.api#required": {},
+          "smithy.api#documentation": "The value, stored verbatim (at most 1 MiB)."
+        }
+      }
+    }
+  ]
+}

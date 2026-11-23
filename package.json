@@ -1,0 +1,74 @@
+{
+  "name": "alchemy-provider-telnyx",
+  "version": "0.1.0",
+  "description": "Telnyx for Alchemy (alchemy.run): 165 resources on a vendored, distilled-generated Effect SDK covering all ~1,550 Telnyx API operations.",
+  "keywords": [
+    "alchemy",
+    "alchemy-provider",
+    "effect",
+    "infrastructure-as-code",
+    "sms",
+    "telephony",
+    "telnyx",
+    "voice"
+  ],
+  "homepage": "https://github.com/menelsystems/alchemy-provider-telnyx#readme",
+  "bugs": {
+    "url": "https://github.com/menelsystems/alchemy-provider-telnyx/issues"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menelsystems/alchemy-provider-telnyx.git"
+  },
+  "files": [
+    "src",
+    "vendor/distilled-telnyx/src",
+    "NOTICE",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "imports": {
+    "#telnyx/*": "./vendor/distilled-telnyx/src/*"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./api": "./vendor/distilled-telnyx/src/index.ts",
+    "./api/*": "./vendor/distilled-telnyx/src/services/*.ts",
+    "./*": "./src/*.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "test": "bun test test/unit test/sdk-smoke.test.ts && alchemy-test test/stack",
+    "test:live": "alchemy-test test/live",
+    "check": "bun run typecheck && bun run format:check && bun run test",
+    "sdk:regenerate": "vendor/distilled-telnyx/regenerate.sh"
+  },
+  "dependencies": {
+    "@distilled.cloud/core": "1.0.0-rc.20"
+  },
+  "devDependencies": {
+    "@alchemy.run/test": "2.0.0-beta.87",
+    "@effect/platform-bun": "^4.1.4",
+    "@effect/platform-node": "^4.1.4",
+    "@types/bun": "1.4.3",
+    "alchemy": "2.0.0-beta.87",
+    "effect": "^4.1.4",
+    "oxfmt": "0.79.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "alchemy": ">=2.0.0-beta.87",
+    "effect": "^4.1.4"
+  },
+  "alchemy": {
+    "contributes": [
+      "alchemy-provider-telnyx/Contributions"
+    ]
+  }
+}

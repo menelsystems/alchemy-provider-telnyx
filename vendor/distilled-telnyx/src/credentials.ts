@@ -1,0 +1,54 @@
+import { ConfigError } from "@distilled.cloud/core/errors";
+/**
+ * Telnyx credentials -- hand-written.
+ *
+ * The `Credentials` service holds an *effect* that resolves the current
+ * credentials; the protocol resolves it per request on the calling fiber,
+ * so context-provided credentials (an Alchemy profile, a test layer) win.
+ */
+import * as Context from "effect/Context";
+import * as Effect from "effect/Effect";
+import * as Layer from "effect/Layer";
+import * as Redacted from "effect/Redacted";
+
+export const DEFAULT_API_BASE_URL = "https://api.telnyx.com/v2";
+
+export interface Config {
+  readonly apiKey: Redacted.Redacted<string>;
+  readonly apiBaseUrl: string;
+}
+
+export class Credentials
+  extends /*@__PURE__*/ Context.Service<Credentials, Effect.Effect<Config, ConfigError>>()(
+    "TelnyxCredentials",
+  ) {}
+
+/** Layer from a redacted API key + optional base URL. */
+export const fromApiKey = (config: {
+  readonly apiKey: Redacted.Redacted<string>;
+  readonly apiBaseUrl?: string;
+}): Layer.Layer<Credentials> =>
+  Layer.succeed(
+    Credentials,
+    Effect.succeed({
+      apiKey: config.apiKey,
+      apiBaseUrl: config.apiBaseUrl ?? DEFAULT_API_BASE_URL,
+    }),
+  );
+
+/** Reads TELNYX_API_KEY (required) and TELNYX_API_BASE_URL (optional). */
+export const CredentialsFromEnv: Layer.Layer<Credentials> = /*@__PURE__*/ Layer.succeed(
+  Credentials,
+  /*@__PURE__*/ Effect.gen(function* () {
+    const apiKey = process.env.TELNYX_API_KEY;
+    if (!apiKey) {
+      return yield* new ConfigError({
+        message: "TELNYX_API_KEY environment variable is required",
+      });
+    }
+    return {
+      apiKey: Redacted.make(apiKey),
+      apiBaseUrl: process.env.TELNYX_API_BASE_URL ?? DEFAULT_API_BASE_URL,
+    };
+  }),
+);

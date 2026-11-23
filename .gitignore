@@ -1,0 +1,6 @@
+node_modules
+lib
+.alchemy
+reference
+.env
+*.log

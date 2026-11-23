@@ -1,0 +1,20 @@
+alchemy-provider-telnyx
+
+vendor/distilled-telnyx/ is generated with distilled (https://github.com/alchemy-run/distilled,
+Apache-2.0) from the Telnyx OpenAPI spec (https://github.com/team-telnyx/openapi). Its hand-written
+runtime files and generator config are adapted from distilled's packages.
+
+The resource modeling in src/ (which operations make up each resource, its identity, which props
+force replacement, and the special-case behaviour of 28 resources) follows terraform-provider-telnyx
+by Roman Baron (https://github.com/RomansWorks/terraform-provider-telnyx), licensed under the
+Apache License 2.0.
+
+---
+
+NOTICE from distilled (https://github.com/alchemy-run/distilled):
+
+Alchemy
+Copyright 2026 Functionless Corp.
+
+This product includes software developed by third parties. See
+THIRD_PARTY_LICENSES.md in that repository for attribution and license details.
