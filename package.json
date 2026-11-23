@@ -1,6 +1,6 @@
 {
   "name": "alchemy-provider-telnyx",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0",
   "description": "Telnyx for Alchemy (alchemy.run): 165 resources on a vendored, distilled-generated Effect SDK covering all ~1,550 Telnyx API operations.",
   "keywords": [
     "alchemy",
