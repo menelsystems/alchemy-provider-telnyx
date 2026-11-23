@@ -1,7 +1,7 @@
 // Telnyx number block order: telnyx_number_block_order in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_phone_number_block_orders from "#telnyx/services/phone_number_block_orders.ts";
+import * as M_phone_number_block_orders from "../../vendor/distilled-telnyx/src/services/phone_number_block_orders.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

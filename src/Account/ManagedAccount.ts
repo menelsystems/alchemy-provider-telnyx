@@ -1,7 +1,7 @@
 // Telnyx managed account: telnyx_managed_account in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_managed_accounts from "#telnyx/services/managed_accounts.ts";
+import * as M_managed_accounts from "../../vendor/distilled-telnyx/src/services/managed_accounts.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

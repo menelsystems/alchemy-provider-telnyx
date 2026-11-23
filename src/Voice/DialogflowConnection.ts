@@ -1,7 +1,7 @@
 // Telnyx dialogflow connection: telnyx_dialogflow_connection in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_dialogflow_integration from "#telnyx/services/dialogflow_integration.ts";
+import * as M_dialogflow_integration from "../../vendor/distilled-telnyx/src/services/dialogflow_integration.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

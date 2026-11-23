@@ -1,7 +1,7 @@
 // Telnyx sim card data usage notification: telnyx_sim_card_data_usage_notification in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_sim_cards from "#telnyx/services/sim_cards.ts";
+import * as M_sim_cards from "../../vendor/distilled-telnyx/src/services/sim_cards.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

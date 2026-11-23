@@ -8,7 +8,7 @@ import {
 } from "alchemy/Auth/StoredAuthProvider";
 import * as Effect from "effect/Effect";
 import * as Redacted from "effect/Redacted";
-import { DEFAULT_API_BASE_URL } from "#telnyx/credentials.ts";
+import { DEFAULT_API_BASE_URL } from "../vendor/distilled-telnyx/src/credentials.ts";
 
 export const TELNYX_AUTH_PROVIDER_NAME = "Telnyx";
 

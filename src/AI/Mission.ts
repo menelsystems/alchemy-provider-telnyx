@@ -1,7 +1,7 @@
 // Telnyx mission: telnyx_ai_mission in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_missions from "#telnyx/services/missions.ts";
+import * as M_missions from "../../vendor/distilled-telnyx/src/services/missions.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

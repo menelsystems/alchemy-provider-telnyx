@@ -1,7 +1,7 @@
 // Telnyx siprec connector: telnyx_siprec_connector in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_siprec_connectors from "#telnyx/services/siprec_connectors.ts";
+import * as M_siprec_connectors from "../../vendor/distilled-telnyx/src/services/siprec_connectors.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

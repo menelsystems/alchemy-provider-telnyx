@@ -1,7 +1,7 @@
 // Telnyx voice clone: telnyx_voice_clone in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_voice_clones from "#telnyx/services/voice_clones.ts";
+import * as M_voice_clones from "../../vendor/distilled-telnyx/src/services/voice_clones.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

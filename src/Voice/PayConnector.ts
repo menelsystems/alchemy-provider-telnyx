@@ -1,7 +1,7 @@
 // Telnyx pay connector: telnyx_pay_connector in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_pay_connectors from "#telnyx/services/pay_connectors.ts";
+import * as M_pay_connectors from "../../vendor/distilled-telnyx/src/services/pay_connectors.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

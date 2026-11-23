@@ -2,7 +2,7 @@
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
 import * as Schema from "effect/Schema";
-import * as M_assistants from "#telnyx/services/assistants.ts";
+import * as M_assistants from "../../vendor/distilled-telnyx/src/services/assistants.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

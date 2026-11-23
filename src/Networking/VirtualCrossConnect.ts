@@ -1,7 +1,7 @@
 // Telnyx virtual cross connect: telnyx_virtual_cross_connect in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_virtual_cross_connects from "#telnyx/services/virtual_cross_connects.ts";
+import * as M_virtual_cross_connects from "../../vendor/distilled-telnyx/src/services/virtual_cross_connects.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

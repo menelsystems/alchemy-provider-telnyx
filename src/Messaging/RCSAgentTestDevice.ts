@@ -1,7 +1,7 @@
 // Telnyx rcs agent test device: telnyx_rcs_agent_test_device in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_rcs_agents from "#telnyx/services/rcs_agents.ts";
+import * as M_rcs_agents from "../../vendor/distilled-telnyx/src/services/rcs_agents.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

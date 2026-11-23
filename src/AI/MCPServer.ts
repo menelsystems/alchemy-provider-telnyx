@@ -1,7 +1,7 @@
 // Telnyx mcp server: telnyx_ai_mcp_server in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_mcp_servers from "#telnyx/services/mcp_servers.ts";
+import * as M_mcp_servers from "../../vendor/distilled-telnyx/src/services/mcp_servers.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

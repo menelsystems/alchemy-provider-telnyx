@@ -5,7 +5,7 @@
 import type { ConfigError } from "@distilled.cloud/core/errors";
 import { lazyCredentials } from "alchemy/Auth/Resolve";
 import * as Layer from "effect/Layer";
-import { Credentials } from "#telnyx/credentials.ts";
+import { Credentials } from "../vendor/distilled-telnyx/src/credentials.ts";
 import { TELNYX_AUTH_PROVIDER_NAME, type TelnyxResolvedCredentials } from "./AuthProvider.ts";
 
 export {
@@ -14,11 +14,11 @@ export {
   DEFAULT_API_BASE_URL,
   fromApiKey,
   type Config,
-} from "#telnyx/credentials.ts";
+} from "../vendor/distilled-telnyx/src/credentials.ts";
 
 // Lets the SDK credentials bubble through a stack's `providers` layer, so
 // stack code and Actions can call SDK operations directly.
-declare module "#telnyx/credentials.ts" {
+declare module "../vendor/distilled-telnyx/src/credentials.ts" {
   interface Credentials {
     readonly kind: "Credentials";
   }

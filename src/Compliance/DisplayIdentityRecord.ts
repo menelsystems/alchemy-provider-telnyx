@@ -1,7 +1,7 @@
 // Telnyx display identity record: telnyx_display_identity_record in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_display_identity_records from "#telnyx/services/display_identity_records.ts";
+import * as M_display_identity_records from "../../vendor/distilled-telnyx/src/services/display_identity_records.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

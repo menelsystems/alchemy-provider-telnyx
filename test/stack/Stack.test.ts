@@ -1,8 +1,8 @@
 import { expect } from "@alchemy.run/test";
 import * as Test from "@alchemy.run/test/Alchemy";
 import * as Effect from "effect/Effect";
-import * as MessagingApi from "#telnyx/services/messaging.ts";
 import * as Telnyx from "../../src/index.ts";
+import * as MessagingApi from "../../vendor/distilled-telnyx/src/services/messaging.ts";
 import { fakeTelnyx } from "../unit/fake.ts";
 
 // An in-memory Telnyx holding messaging profiles.

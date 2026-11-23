@@ -1,7 +1,7 @@
 // Telnyx test schedule: telnyx_ai_test_schedule in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_ai_tests from "#telnyx/services/ai_tests.ts";
+import * as M_ai_tests from "../../vendor/distilled-telnyx/src/services/ai_tests.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,0 +1,82 @@
+name: Release
+
+# Publishes to npm when a version tag is pushed:
+#
+#   npm version patch   # bumps package.json and tags vX.Y.Z
+#   git push --follow-tags
+#
+# Uses npm trusted publishing: npm verifies this workflow's OIDC token instead
+# of a stored token, and attaches a provenance attestation. Configure it on
+# npmjs.com under the package's Settings → Trusted publishing:
+#   Organization or user: menelsystems
+#   Repository:           alchemy-provider-telnyx
+#   Workflow filename:    release.yml
+#   Environment name:     release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: release
+      url: https://www.npmjs.com/package/alchemy-provider-telnyx
+    permissions:
+      contents: read
+      id-token: write # OIDC for npm trusted publishing and provenance
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.4
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      # Trusted publishing needs npm >= 11.5.1.
+      - name: Update npm
+        run: npm install -g npm@^11.5.1
+
+      - name: Tag matches package.json version
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match package.json version $version"
+            exit 1
+          fi
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Check
+        run: bun run check
+
+      - name: Build
+        run: bun run build
+
+      - name: Smoke test the packed tarball
+        run: bun run smoke
+
+      # Pre-release versions (1.2.0-beta.1) go to the `next` dist-tag so
+      # `npm install alchemy-provider-telnyx` keeps getting the latest stable.
+      # The steps above already ran what prepublishOnly would.
+      - name: Publish
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          tag=latest
+          case "$version" in *-*) tag=next ;; esac
+          npm publish --ignore-scripts --access public --tag "$tag"

@@ -1,7 +1,7 @@
 // Telnyx voice design: telnyx_voice_design in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_voice_designs from "#telnyx/services/voice_designs.ts";
+import * as M_voice_designs from "../../vendor/distilled-telnyx/src/services/voice_designs.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

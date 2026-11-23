@@ -1,7 +1,7 @@
 // Telnyx display identity record phone number: telnyx_display_identity_record_phone_number in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_phone_numbers from "#telnyx/services/phone_numbers.ts";
+import * as M_phone_numbers from "../../vendor/distilled-telnyx/src/services/phone_numbers.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

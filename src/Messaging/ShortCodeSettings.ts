@@ -1,7 +1,7 @@
 // Telnyx short code settings: telnyx_short_code_settings in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_short_codes from "#telnyx/services/short_codes.ts";
+import * as M_short_codes from "../../vendor/distilled-telnyx/src/services/short_codes.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,7 +1,7 @@
 // Telnyx pronunciation dictionary: telnyx_pronunciation_dictionary in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_pronunciation_dictionaries from "#telnyx/services/pronunciation_dictionaries.ts";
+import * as M_pronunciation_dictionaries from "../../vendor/distilled-telnyx/src/services/pronunciation_dictionaries.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

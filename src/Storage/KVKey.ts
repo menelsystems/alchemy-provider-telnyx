@@ -2,7 +2,7 @@
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
 import * as Redacted from "effect/Redacted";
-import * as M_kv_keys from "#telnyx/services/kv_keys.ts";
+import * as M_kv_keys from "../../vendor/distilled-telnyx/src/services/kv_keys.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

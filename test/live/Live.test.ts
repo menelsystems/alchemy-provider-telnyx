@@ -8,8 +8,8 @@
 import { expect } from "@alchemy.run/test";
 import * as Test from "@alchemy.run/test/Alchemy";
 import * as Effect from "effect/Effect";
-import * as Profiles from "#telnyx/services/profiles.ts";
 import * as Telnyx from "../../src/index.ts";
+import * as Profiles from "../../vendor/distilled-telnyx/src/services/profiles.ts";
 
 const { test } = Test.make({ providers: Telnyx.providers() });
 const live = test.provider.skipIf(!process.env.TELNYX_API_KEY);

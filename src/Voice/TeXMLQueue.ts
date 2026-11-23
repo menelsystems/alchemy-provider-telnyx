@@ -1,7 +1,7 @@
 // Telnyx texml queue: telnyx_texml_queue in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_te_xml_rest_commands from "#telnyx/services/te_xml_rest_commands.ts";
+import * as M_te_xml_rest_commands from "../../vendor/distilled-telnyx/src/services/te_xml_rest_commands.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import type { Providers } from "../Providers.ts";

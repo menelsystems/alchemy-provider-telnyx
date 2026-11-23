@@ -1,7 +1,7 @@
 // Telnyx profile message template: telnyx_verify_profile_message_template in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_verify from "#telnyx/services/verify.ts";
+import * as M_verify from "../../vendor/distilled-telnyx/src/services/verify.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

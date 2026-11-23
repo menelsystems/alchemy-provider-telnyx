@@ -1,7 +1,7 @@
 // Telnyx texml application: telnyx_texml_application in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_te_xml_applications from "#telnyx/services/te_xml_applications.ts";
+import * as M_te_xml_applications from "../../vendor/distilled-telnyx/src/services/te_xml_applications.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

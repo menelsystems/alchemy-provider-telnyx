@@ -1,7 +1,7 @@
 // Telnyx outbound voice profile: telnyx_outbound_voice_profile in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_outbound_voice_profiles from "#telnyx/services/outbound_voice_profiles.ts";
+import * as M_outbound_voice_profiles from "../../vendor/distilled-telnyx/src/services/outbound_voice_profiles.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

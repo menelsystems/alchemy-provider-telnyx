@@ -1,7 +1,7 @@
 // Telnyx shared campaign: telnyx_10dlc_shared_campaign in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_shared_campaigns from "#telnyx/services/shared_campaigns.ts";
+import * as M_shared_campaigns from "../../vendor/distilled-telnyx/src/services/shared_campaigns.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

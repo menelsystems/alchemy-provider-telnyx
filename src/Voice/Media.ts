@@ -1,7 +1,7 @@
 // Telnyx media: telnyx_media in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_media_storage_api from "#telnyx/services/media_storage_api.ts";
+import * as M_media_storage_api from "../../vendor/distilled-telnyx/src/services/media_storage_api.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

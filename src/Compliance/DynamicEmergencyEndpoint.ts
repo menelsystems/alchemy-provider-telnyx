@@ -1,7 +1,7 @@
 // Telnyx dynamic emergency endpoint: telnyx_dynamic_emergency_endpoint in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_dynamic_emergency_endpoints from "#telnyx/services/dynamic_emergency_endpoints.ts";
+import * as M_dynamic_emergency_endpoints from "../../vendor/distilled-telnyx/src/services/dynamic_emergency_endpoints.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

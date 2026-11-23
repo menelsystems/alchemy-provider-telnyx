@@ -1,7 +1,7 @@
 // Telnyx inbox: telnyx_email_inbox in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_email_inboxes from "#telnyx/services/email_inboxes.ts";
+import * as M_email_inboxes from "../../vendor/distilled-telnyx/src/services/email_inboxes.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

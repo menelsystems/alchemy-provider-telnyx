@@ -1,7 +1,7 @@
 // Telnyx conversation insight group: telnyx_ai_conversation_insight_group in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_conversations from "#telnyx/services/conversations.ts";
+import * as M_conversations from "../../vendor/distilled-telnyx/src/services/conversations.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -2,8 +2,8 @@ import { expect, test } from "bun:test";
 import * as Effect from "effect/Effect";
 import * as Layer from "effect/Layer";
 import * as Redacted from "effect/Redacted";
-import * as Sdk from "#telnyx/index.ts";
-import * as Profiles from "#telnyx/services/profiles.ts";
+import * as Sdk from "../vendor/distilled-telnyx/src/index.ts";
+import * as Profiles from "../vendor/distilled-telnyx/src/services/profiles.ts";
 import { fakeTelnyx } from "./unit/fake.ts";
 
 test("vendored SDK round-trips through the fake API", async () => {

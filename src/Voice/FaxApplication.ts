@@ -1,7 +1,7 @@
 // Telnyx fax application: telnyx_fax_application in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_programmable_fax_applications from "#telnyx/services/programmable_fax_applications.ts";
+import * as M_programmable_fax_applications from "../../vendor/distilled-telnyx/src/services/programmable_fax_applications.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

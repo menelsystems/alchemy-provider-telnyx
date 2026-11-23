@@ -1,7 +1,7 @@
 // Telnyx agent gateway: telnyx_agent_gateway in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_agent_gateways from "#telnyx/services/agent_gateways.ts";
+import * as M_agent_gateways from "../../vendor/distilled-telnyx/src/services/agent_gateways.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

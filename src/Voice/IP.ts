@@ -1,7 +1,7 @@
 // Telnyx ip: telnyx_ip in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_ips from "#telnyx/services/ips.ts";
+import * as M_ips from "../../vendor/distilled-telnyx/src/services/ips.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,7 +1,7 @@
 // Telnyx phone number voicemail: telnyx_phone_number_voicemail in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_voicemail from "#telnyx/services/voicemail.ts";
+import * as M_voicemail from "../../vendor/distilled-telnyx/src/services/voicemail.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

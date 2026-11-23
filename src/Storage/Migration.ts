@@ -1,7 +1,7 @@
 // Telnyx migration: telnyx_storage_migration in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_data_migration from "#telnyx/services/data_migration.ts";
+import * as M_data_migration from "../../vendor/distilled-telnyx/src/services/data_migration.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

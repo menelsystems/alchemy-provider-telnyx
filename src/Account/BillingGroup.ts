@@ -1,7 +1,7 @@
 // Telnyx billing group: telnyx_billing_group in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_billing_groups from "#telnyx/services/billing_groups.ts";
+import * as M_billing_groups from "../../vendor/distilled-telnyx/src/services/billing_groups.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

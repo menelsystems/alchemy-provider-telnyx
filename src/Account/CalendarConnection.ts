@@ -1,7 +1,7 @@
 // Telnyx calendar connection: telnyx_calendar_connection in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_meeting_calendar_connections from "#telnyx/services/meeting_calendar_connections.ts";
+import * as M_meeting_calendar_connections from "../../vendor/distilled-telnyx/src/services/meeting_calendar_connections.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

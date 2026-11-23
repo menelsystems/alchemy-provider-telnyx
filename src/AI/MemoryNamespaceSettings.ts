@@ -1,7 +1,7 @@
 // Telnyx memory namespace settings: telnyx_ai_memory_namespace_settings in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_settings from "#telnyx/services/settings.ts";
+import * as M_settings from "../../vendor/distilled-telnyx/src/services/settings.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

@@ -1,7 +1,7 @@
 // Telnyx avatar: telnyx_ai_avatar in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_avatars from "#telnyx/services/avatars.ts";
+import * as M_avatars from "../../vendor/distilled-telnyx/src/services/avatars.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

@@ -1,7 +1,7 @@
 // Telnyx template: telnyx_email_template in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_email_templates from "#telnyx/services/email_templates.ts";
+import * as M_email_templates from "../../vendor/distilled-telnyx/src/services/email_templates.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

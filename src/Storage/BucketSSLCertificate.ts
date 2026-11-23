@@ -2,7 +2,7 @@
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
 import * as Redacted from "effect/Redacted";
-import * as M_bucket_ssl_certificate from "#telnyx/services/bucket_ssl_certificate.ts";
+import * as M_bucket_ssl_certificate from "../../vendor/distilled-telnyx/src/services/bucket_ssl_certificate.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

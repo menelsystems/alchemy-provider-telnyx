@@ -1,7 +1,7 @@
 // Telnyx domain: telnyx_email_domain in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_email_domains from "#telnyx/services/email_domains.ts";
+import * as M_email_domains from "../../vendor/distilled-telnyx/src/services/email_domains.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

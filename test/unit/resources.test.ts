@@ -7,10 +7,10 @@ import * as Provider from "alchemy/Provider";
 import * as Effect from "effect/Effect";
 import * as Layer from "effect/Layer";
 import * as Redacted from "effect/Redacted";
-import * as Profiles from "#telnyx/services/profiles.ts";
 import * as Crud from "../../src/Crud.ts";
 import * as Telnyx from "../../src/index.ts";
 import * as Paging from "../../src/Paging.ts";
+import * as Profiles from "../../vendor/distilled-telnyx/src/services/profiles.ts";
 import { fakeTelnyx, type Reply } from "./fake.ts";
 
 type Api = ReturnType<typeof fakeTelnyx>;

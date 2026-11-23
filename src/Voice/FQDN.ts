@@ -1,7 +1,7 @@
 // Telnyx fqdn: telnyx_fqdn in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_fqdns from "#telnyx/services/fqdns.ts";
+import * as M_fqdns from "../../vendor/distilled-telnyx/src/services/fqdns.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

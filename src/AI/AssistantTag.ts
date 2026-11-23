@@ -1,7 +1,7 @@
 // Telnyx assistant tag: telnyx_ai_assistant_tag in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_assistants from "#telnyx/services/assistants.ts";
+import * as M_assistants from "../../vendor/distilled-telnyx/src/services/assistants.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

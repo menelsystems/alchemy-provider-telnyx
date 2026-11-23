@@ -1,7 +1,7 @@
 // Telnyx oauth client: telnyx_oauth_client in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_oauth_clients from "#telnyx/services/oauth_clients.ts";
+import * as M_oauth_clients from "../../vendor/distilled-telnyx/src/services/oauth_clients.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

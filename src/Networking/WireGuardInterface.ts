@@ -1,7 +1,7 @@
 // Telnyx wireguard interface: telnyx_wireguard_interface in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_wire_guard_interfaces from "#telnyx/services/wire_guard_interfaces.ts";
+import * as M_wire_guard_interfaces from "../../vendor/distilled-telnyx/src/services/wire_guard_interfaces.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

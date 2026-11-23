@@ -1,7 +1,7 @@
 // Telnyx order: telnyx_porting_order in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_porting_orders from "#telnyx/services/porting_orders.ts";
+import * as M_porting_orders from "../../vendor/distilled-telnyx/src/services/porting_orders.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

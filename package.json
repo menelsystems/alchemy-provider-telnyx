@@ -22,6 +22,7 @@
     "url": "git+https://github.com/menelsystems/alchemy-provider-telnyx.git"
   },
   "files": [
+    "lib",
     "src",
     "vendor/distilled-telnyx/src",
     "NOTICE",
@@ -30,15 +31,36 @@
   ],
   "type": "module",
   "sideEffects": false,
-  "imports": {
-    "#telnyx/*": "./vendor/distilled-telnyx/src/*"
-  },
   "exports": {
-    ".": "./src/index.ts",
-    "./api": "./vendor/distilled-telnyx/src/index.ts",
-    "./api/*": "./vendor/distilled-telnyx/src/services/*.ts",
-    "./*": "./src/*.ts",
+    ".": {
+      "types": "./lib/src/index.d.ts",
+      "bun": "./src/index.ts",
+      "worker": "./src/index.ts",
+      "default": "./lib/src/index.js"
+    },
+    "./api": {
+      "types": "./lib/vendor/distilled-telnyx/src/index.d.ts",
+      "bun": "./vendor/distilled-telnyx/src/index.ts",
+      "worker": "./vendor/distilled-telnyx/src/index.ts",
+      "default": "./lib/vendor/distilled-telnyx/src/index.js"
+    },
+    "./api/*": {
+      "types": "./lib/vendor/distilled-telnyx/src/services/*.d.ts",
+      "bun": "./vendor/distilled-telnyx/src/services/*.ts",
+      "worker": "./vendor/distilled-telnyx/src/services/*.ts",
+      "default": "./lib/vendor/distilled-telnyx/src/services/*.js"
+    },
+    "./*": {
+      "types": "./lib/src/*.d.ts",
+      "bun": "./src/*.ts",
+      "worker": "./src/*.ts",
+      "default": "./lib/src/*.js"
+    },
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json",
@@ -47,7 +69,10 @@
     "test": "bun test test/unit test/sdk-smoke.test.ts && alchemy-test test/stack",
     "test:live": "alchemy-test test/live",
     "check": "bun run typecheck && bun run format:check && bun run test",
-    "sdk:regenerate": "vendor/distilled-telnyx/regenerate.sh"
+    "sdk:regenerate": "vendor/distilled-telnyx/regenerate.sh",
+    "build": "rm -rf lib && tsc -p tsconfig.build.json",
+    "smoke": "bash scripts/smoke-pack.sh",
+    "prepublishOnly": "bun run check && bun run build && bun run smoke"
   },
   "dependencies": {
     "@distilled.cloud/core": "1.0.0-rc.20"

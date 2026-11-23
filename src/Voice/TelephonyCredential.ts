@@ -1,7 +1,7 @@
 // Telnyx telephony credential: telnyx_telephony_credential in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_credentials from "#telnyx/services/credentials.ts";
+import * as M_credentials from "../../vendor/distilled-telnyx/src/services/credentials.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,7 +1,7 @@
 // Telnyx profile: telnyx_messaging_profile in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_profiles from "#telnyx/services/profiles.ts";
+import * as M_profiles from "../../vendor/distilled-telnyx/src/services/profiles.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

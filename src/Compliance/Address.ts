@@ -1,7 +1,7 @@
 // Telnyx address: telnyx_address in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_addresses from "#telnyx/services/addresses.ts";
+import * as M_addresses from "../../vendor/distilled-telnyx/src/services/addresses.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

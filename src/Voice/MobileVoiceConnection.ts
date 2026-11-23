@@ -1,7 +1,7 @@
 // Telnyx mobile voice connection: telnyx_mobile_voice_connection in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_mobile_voice_connections from "#telnyx/services/mobile_voice_connections.ts";
+import * as M_mobile_voice_connections from "../../vendor/distilled-telnyx/src/services/mobile_voice_connections.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

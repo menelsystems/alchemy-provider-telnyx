@@ -2,7 +2,7 @@ import { NotFound } from "@distilled.cloud/core/errors";
 // Telnyx spend limit: telnyx_spend_limit in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_spend_limits from "#telnyx/services/spend_limits.ts";
+import * as M_spend_limits from "../../vendor/distilled-telnyx/src/services/spend_limits.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

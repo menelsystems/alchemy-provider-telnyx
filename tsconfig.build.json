@@ -1,0 +1,16 @@
+{
+  // Compiles src/ and the vendored SDK to lib/ (JS + .d.ts) for Node and
+  // type-checkers. Bun and Workers load the TypeScript in src/ directly
+  // through the `bun`/`worker` export conditions.
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*.ts", "vendor/distilled-telnyx/src/**/*.ts"],
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "./lib",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "rewriteRelativeImportExtensions": true
+  }
+}

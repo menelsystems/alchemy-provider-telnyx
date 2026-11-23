@@ -1,7 +1,7 @@
 // Telnyx document: telnyx_document in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_documents from "#telnyx/services/documents.ts";
+import * as M_documents from "../../vendor/distilled-telnyx/src/services/documents.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

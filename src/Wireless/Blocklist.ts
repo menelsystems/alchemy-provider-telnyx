@@ -1,7 +1,7 @@
 // Telnyx blocklist: telnyx_wireless_blocklist in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_wireless_blocklists from "#telnyx/services/wireless_blocklists.ts";
+import * as M_wireless_blocklists from "../../vendor/distilled-telnyx/src/services/wireless_blocklists.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

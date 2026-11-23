@@ -1,7 +1,7 @@
 // Telnyx phone number: telnyx_phone_number in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_phone_number_configurations from "#telnyx/services/phone_number_configurations.ts";
+import * as M_phone_number_configurations from "../../vendor/distilled-telnyx/src/services/phone_number_configurations.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,7 +1,7 @@
 // Telnyx tailscale subnet router: telnyx_tailscale_subnet_router in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_tailscale_subnet_routers from "#telnyx/services/tailscale_subnet_routers.ts";
+import * as M_tailscale_subnet_routers from "../../vendor/distilled-telnyx/src/services/tailscale_subnet_routers.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

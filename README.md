@@ -171,12 +171,32 @@ responses, If-Match headers, settings routed to their own endpoints) inline.
 ```sh
 bun install
 bun run check            # typecheck, format check, unit + stack tests
+bun run build            # compile src/ and the vendored SDK to lib/
+bun run smoke            # pack, install with npm, load under Node, typecheck a consumer
 bun run test:live        # needs TELNYX_API_KEY; creates and deletes free objects
 bun run sdk:regenerate   # regenerate the vendored SDK (needs git, Node 24+, pnpm)
 ```
 
+The package ships TypeScript (`src/`, loaded by Bun and Workers through the `bun`/`worker`
+export conditions) and compiled JavaScript with declarations (`lib/`, for Node and
+type-checkers), like the `@alchemy.run/*` packages.
+
 `test/unit` runs resources against an in-memory fake of the Telnyx API, through the real SDK.
 `test/stack` deploys, updates and destroys a stack through Alchemy's real engine.
+
+## Releasing
+
+Releases publish from GitHub Actions (`.github/workflows/release.yml`) with
+[npm trusted publishing](https://docs.npmjs.com/trusted-publishers): no npm token is stored, and
+each version carries a provenance attestation linking it to the commit that built it.
+
+```sh
+npm version patch        # or minor / major / prerelease; bumps package.json and tags vX.Y.Z
+git push --follow-tags   # the tag runs check, build, smoke and npm publish
+```
+
+Pre-release versions (`1.2.0-beta.1`) publish to the `next` dist-tag. The job runs in the
+`release` environment, which only `v*` tags can deploy to.
 
 ## License
 

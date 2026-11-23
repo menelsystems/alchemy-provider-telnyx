@@ -1,7 +1,7 @@
 // Telnyx message template: telnyx_whatsapp_message_template in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_whatsapp_message_templates from "#telnyx/services/whatsapp_message_templates.ts";
+import * as M_whatsapp_message_templates from "../../vendor/distilled-telnyx/src/services/whatsapp_message_templates.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

@@ -1,7 +1,7 @@
 // Telnyx cloudfs filesystem: telnyx_storage_cloudfs_filesystem in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_cloudfs_filesystems from "#telnyx/services/cloudfs_filesystems.ts";
+import * as M_cloudfs_filesystems from "../../vendor/distilled-telnyx/src/services/cloudfs_filesystems.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

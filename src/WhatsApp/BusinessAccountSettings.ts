@@ -1,7 +1,7 @@
 // Telnyx business account settings: telnyx_whatsapp_business_account_settings in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_whatsapp_business_accounts from "#telnyx/services/whatsapp_business_accounts.ts";
+import * as M_whatsapp_business_accounts from "../../vendor/distilled-telnyx/src/services/whatsapp_business_accounts.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

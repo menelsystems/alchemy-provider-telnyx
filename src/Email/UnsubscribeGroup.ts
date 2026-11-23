@@ -1,7 +1,7 @@
 // Telnyx unsubscribe group: telnyx_email_unsubscribe_group in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_email_unsubscribe_groups from "#telnyx/services/email_unsubscribe_groups.ts";
+import * as M_email_unsubscribe_groups from "../../vendor/distilled-telnyx/src/services/email_unsubscribe_groups.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

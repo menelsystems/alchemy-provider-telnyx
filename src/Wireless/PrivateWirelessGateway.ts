@@ -1,7 +1,7 @@
 // Telnyx private wireless gateway: telnyx_private_wireless_gateway in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_private_wireless_gateways from "#telnyx/services/private_wireless_gateways.ts";
+import * as M_private_wireless_gateways from "../../vendor/distilled-telnyx/src/services/private_wireless_gateways.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

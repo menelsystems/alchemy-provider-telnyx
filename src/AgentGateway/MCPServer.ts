@@ -1,7 +1,7 @@
 // Telnyx mcp server: telnyx_agent_gateway_mcp_server in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_agent_gateway_mcp_servers from "#telnyx/services/agent_gateway_mcp_servers.ts";
+import * as M_agent_gateway_mcp_servers from "../../vendor/distilled-telnyx/src/services/agent_gateway_mcp_servers.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

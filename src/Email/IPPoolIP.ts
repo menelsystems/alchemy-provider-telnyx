@@ -1,7 +1,7 @@
 // Telnyx ip pool ip: telnyx_email_ip_pool_ip in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_ip_pools from "#telnyx/services/ip_pools.ts";
+import * as M_ip_pools from "../../vendor/distilled-telnyx/src/services/ip_pools.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

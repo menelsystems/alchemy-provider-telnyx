@@ -1,7 +1,7 @@
 // Telnyx profile auto response: telnyx_messaging_profile_auto_response in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_opt_out_management from "#telnyx/services/opt_out_management.ts";
+import * as M_opt_out_management from "../../vendor/distilled-telnyx/src/services/opt_out_management.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

@@ -1,7 +1,7 @@
 // Telnyx user profile: telnyx_user_profile in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_user_profile from "#telnyx/services/user_profile.ts";
+import * as M_user_profile from "../../vendor/distilled-telnyx/src/services/user_profile.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

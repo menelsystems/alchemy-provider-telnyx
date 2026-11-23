@@ -1,7 +1,7 @@
 // Telnyx external connection: telnyx_external_connection in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_external_connections from "#telnyx/services/external_connections.ts";
+import * as M_external_connections from "../../vendor/distilled-telnyx/src/services/external_connections.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

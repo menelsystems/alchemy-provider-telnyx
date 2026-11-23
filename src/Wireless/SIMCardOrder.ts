@@ -1,7 +1,7 @@
 // Telnyx sim card order: telnyx_sim_card_order in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_sim_card_orders from "#telnyx/services/sim_card_orders.ts";
+import * as M_sim_card_orders from "../../vendor/distilled-telnyx/src/services/sim_card_orders.ts";
 import * as Crud from "../Crud.ts";
 import * as Hooks from "../Hooks.ts";
 import * as Paging from "../Paging.ts";

@@ -1,7 +1,7 @@
 // Telnyx verified number: telnyx_verified_number in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_verified_numbers from "#telnyx/services/verified_numbers.ts";
+import * as M_verified_numbers from "../../vendor/distilled-telnyx/src/services/verified_numbers.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

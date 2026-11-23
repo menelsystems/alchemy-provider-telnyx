@@ -1,7 +1,7 @@
 // Telnyx rcs brand: telnyx_rcs_brand in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_rcs_brands from "#telnyx/services/rcs_brands.ts";
+import * as M_rcs_brands from "../../vendor/distilled-telnyx/src/services/rcs_brands.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,7 +1,7 @@
 // Telnyx network route: telnyx_network_route in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_network_routes from "#telnyx/services/network_routes.ts";
+import * as M_network_routes from "../../vendor/distilled-telnyx/src/services/network_routes.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,7 +1,7 @@
 // Telnyx gateway token group: telnyx_ai_gateway_token_group in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_ai_gateway from "#telnyx/services/ai_gateway.ts";
+import * as M_ai_gateway from "../../vendor/distilled-telnyx/src/services/ai_gateway.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

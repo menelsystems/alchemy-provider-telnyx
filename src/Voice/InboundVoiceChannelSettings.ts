@@ -1,7 +1,7 @@
 // Telnyx inbound voice channel settings: telnyx_inbound_voice_channel_settings in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_voice_channels from "#telnyx/services/voice_channels.ts";
+import * as M_voice_channels from "../../vendor/distilled-telnyx/src/services/voice_channels.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 

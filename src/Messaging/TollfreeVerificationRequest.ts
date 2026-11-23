@@ -1,7 +1,7 @@
 // Telnyx tollfree verification request: telnyx_messaging_tollfree_verification_request in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_verification_requests from "#telnyx/services/verification_requests.ts";
+import * as M_verification_requests from "../../vendor/distilled-telnyx/src/services/verification_requests.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

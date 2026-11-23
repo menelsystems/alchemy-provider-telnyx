@@ -1,7 +1,7 @@
 // Telnyx campaign: telnyx_10dlc_campaign in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_campaign from "#telnyx/services/campaign.ts";
+import * as M_campaign from "../../vendor/distilled-telnyx/src/services/campaign.ts";
 import * as Crud from "../Crud.ts";
 import * as Paging from "../Paging.ts";
 import type { Providers } from "../Providers.ts";

@@ -1,7 +1,7 @@
 // Telnyx phone number conversational components: telnyx_whatsapp_phone_number_conversational_components in terraform-provider-telnyx.
 import { Resource } from "alchemy/Resource";
 import * as Effect from "effect/Effect";
-import * as M_whatsapp_phone_numbers from "#telnyx/services/whatsapp_phone_numbers.ts";
+import * as M_whatsapp_phone_numbers from "../../vendor/distilled-telnyx/src/services/whatsapp_phone_numbers.ts";
 import * as Crud from "../Crud.ts";
 import type { Providers } from "../Providers.ts";
 
